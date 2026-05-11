@@ -1,15 +1,16 @@
 # SenseNova AI CLI 配置指南
 
-> 商汤日日新 (SenseNova) 平台接入 Claude Code、Codex、Hermes Agent、OpenCode、OpenClaw 等 AI CLI 工具的完整配置指南。
+> 商汤日日新 (SenseNova) 平台接入 AI CLI 工具的配置参考。Claude Code 部分已实际验证，其他工具配置参考 PR #2559 中的 preset 代码，使用前请自行测试验证。
 
 ## 目录
 
 - [API 基础信息](#api-基础信息)
-- [Claude Code 配置](#claude-code-配置)
-- [Codex 配置](#codex-配置)
-- [Hermes Agent 配置](#hermes-agent-配置)
-- [OpenCode 配置](#opencode-配置)
-- [OpenClaw 配置](#openclaw-配置)
+- [Claude Code 配置（已验证）](#claude-code-配置已验证)
+- [其他工具配置参考](#其他工具配置参考)
+  - [Codex](#codex)
+  - [Hermes Agent](#hermes-agent)
+  - [OpenCode](#opencode)
+  - [OpenClaw](#openclaw)
 - [cc-switch 配置（推荐）](#cc-switch-配置推荐)
 - [故障排查](#故障排查)
 - [常见问题](#常见问题)
@@ -31,7 +32,7 @@
 | `deepseek-v4-flash` | DeepSeek V4 Flash（推荐用于 Claude Code） |
 | `sensenova-6.7-flash-lite` | SenseNova 6.7 Flash Lite |
 
-## Claude Code 配置
+## Claude Code 配置（已验证）
 
 ### ⚠️ 关键陷阱
 
@@ -83,11 +84,13 @@ Claude Code **内部会自动追加 `/v1/messages`** 到 `ANTHROPIC_BASE_URL`。
 claude -p "Say hi"
 ```
 
-## Codex 配置
+## 其他工具配置参考
 
-Codex 使用 OpenAI-compatible API，base URL 需要包含 `/v1`。
+以下配置来自 PR #2559 中的 provider preset 代码，**未经实际验证**。使用前请自行测试。
 
-编辑 `~/.codex/settings.json`：
+### Codex
+
+参考 [PR #2559 的 codexProviderPresets.ts](https://github.com/farion1231/cc-switch/blob/main/src/config/codexProviderPresets.ts) 中的 SenseNova 配置：
 
 ```json
 {
@@ -97,11 +100,9 @@ Codex 使用 OpenAI-compatible API，base URL 需要包含 `/v1`。
 }
 ```
 
-## Hermes Agent 配置
+### Hermes Agent
 
-Hermes Agent 使用 `chat_completions` API 模式。
-
-编辑 `~/.hermes/config.yaml` 或在 provider 配置中添加：
+参考 [PR #2559 的 hermesProviderPresets.ts](https://github.com/farion1231/cc-switch/blob/main/src/config/hermesProviderPresets.ts) 中的 SenseNova 配置：
 
 ```yaml
 providers:
@@ -114,9 +115,9 @@ providers:
         name: "SenseNova 6.7 Flash Lite"
 ```
 
-## OpenCode 配置
+### OpenCode
 
-OpenCode 使用 `@ai-sdk/openai-compatible` 适配器。
+参考 [PR #2559 的 opencodeProviderPresets.ts](https://github.com/farion1231/cc-switch/blob/main/src/config/opencodeProviderPresets.ts) 中的 SenseNova 配置：
 
 ```json
 {
@@ -132,9 +133,9 @@ OpenCode 使用 `@ai-sdk/openai-compatible` 适配器。
 }
 ```
 
-## OpenClaw 配置
+### OpenClaw
 
-OpenClaw 使用 `openai-completions` API 模式。
+参考 [PR #2559 的 openclawProviderPresets.ts](https://github.com/farion1231/cc-switch/blob/main/src/config/openclawProviderPresets.ts) 中的 SenseNova 配置：
 
 ```json
 {
