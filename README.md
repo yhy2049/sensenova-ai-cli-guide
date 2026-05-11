@@ -30,7 +30,6 @@
 |---------|------|
 | `deepseek-v4-flash` | DeepSeek V4 Flash（推荐用于 Claude Code） |
 | `sensenova-6.7-flash-lite` | SenseNova 6.7 Flash Lite |
-| `SenseChat-5` | SenseChat 5（128K 上下文） |
 
 ## Claude Code 配置
 
@@ -113,9 +112,6 @@ providers:
     models:
       - id: "sensenova-6.7-flash-lite"
         name: "SenseNova 6.7 Flash Lite"
-      - id: "SenseChat-5"
-        name: "SenseChat 5"
-        context_length: 128000
 ```
 
 ## OpenCode 配置
@@ -131,8 +127,7 @@ OpenCode 使用 `@ai-sdk/openai-compatible` 适配器。
     "setCacheKey": true
   },
   "models": {
-    "sensenova-6.7-flash-lite": { "name": "SenseNova 6.7 Flash Lite" },
-    "SenseChat-5": { "name": "SenseChat 5" }
+    "sensenova-6.7-flash-lite": { "name": "SenseNova 6.7 Flash Lite" }
   }
 }
 ```
@@ -150,11 +145,6 @@ OpenClaw 使用 `openai-completions` API 模式。
     {
       "id": "sensenova-6.7-flash-lite",
       "name": "SenseNova 6.7 Flash Lite"
-    },
-    {
-      "id": "SenseChat-5",
-      "name": "SenseChat 5",
-      "contextWindow": 128000
     }
   ]
 }
