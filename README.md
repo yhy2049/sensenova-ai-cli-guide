@@ -7,10 +7,6 @@
 - [API 基础信息](#api-基础信息)
 - [Claude Code 配置（已验证）](#claude-code-配置已验证)
 - [其他工具配置参考](#其他工具配置参考)
-  - [Codex](#codex)
-  - [Hermes Agent](#hermes-agent)
-  - [OpenCode](#opencode)
-  - [OpenClaw](#openclaw)
 - [cc-switch 配置（推荐）](#cc-switch-配置推荐)
 - [故障排查](#故障排查)
 - [常见问题](#常见问题)
@@ -86,70 +82,7 @@ claude -p "Say hi"
 
 ## 其他工具配置参考
 
-以下配置来自 PR #2559 中的 provider preset 代码，**未经实际验证**。使用前请自行测试。
-
-### Codex
-
-参考 [PR #2559 的 codexProviderPresets.ts](https://github.com/farion1231/cc-switch/blob/main/src/config/codexProviderPresets.ts) 中的 SenseNova 配置：
-
-```json
-{
-  "base_url": "https://token.sensenova.cn/v1",
-  "api_key": "sk-你的API密钥",
-  "model": "sensenova-6.7-flash-lite"
-}
-```
-
-### Hermes Agent
-
-参考 [PR #2559 的 hermesProviderPresets.ts](https://github.com/farion1231/cc-switch/blob/main/src/config/hermesProviderPresets.ts) 中的 SenseNova 配置：
-
-```yaml
-providers:
-  sensenova:
-    base_url: "https://token.sensenova.cn/v1"
-    api_key: "sk-你的API密钥"
-    api_mode: "chat_completions"
-    models:
-      - id: "sensenova-6.7-flash-lite"
-        name: "SenseNova 6.7 Flash Lite"
-```
-
-### OpenCode
-
-参考 [PR #2559 的 opencodeProviderPresets.ts](https://github.com/farion1231/cc-switch/blob/main/src/config/opencodeProviderPresets.ts) 中的 SenseNova 配置：
-
-```json
-{
-  "npm": "@ai-sdk/openai-compatible",
-  "options": {
-    "baseURL": "https://token.sensenova.cn/v1",
-    "apiKey": "sk-你的API密钥",
-    "setCacheKey": true
-  },
-  "models": {
-    "sensenova-6.7-flash-lite": { "name": "SenseNova 6.7 Flash Lite" }
-  }
-}
-```
-
-### OpenClaw
-
-参考 [PR #2559 的 openclawProviderPresets.ts](https://github.com/farion1231/cc-switch/blob/main/src/config/openclawProviderPresets.ts) 中的 SenseNova 配置：
-
-```json
-{
-  "baseUrl": "https://token.sensenova.cn/v1",
-  "apiKey": "sk-你的API密钥",
-  "api": "openai-completions",
-  "models": [
-    {
-      "id": "sensenova-6.7-flash-lite",
-      "name": "SenseNova 6.7 Flash Lite"
-    }
-  ]
-}
-```
+其他工具（Codex、Hermes Agent、OpenCode、OpenClaw）的 SenseNova provider 配置请参考 [PR #2559 中的 preset 代码](https://github.com/farion1231/cc-switch/pull/2559)，使用前请自行测试验证。
 
 ## cc-switch 配置（推荐）
 
