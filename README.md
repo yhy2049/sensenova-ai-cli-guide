@@ -9,6 +9,7 @@
 - [其他工具配置参考](#其他工具配置参考)
 - [cc-switch 配置（推荐）](#cc-switch-配置推荐)
 - [故障排查](#故障排查)
+- [模型对比与任务分配](analysis/model-comparison-and-task-allocation.md)
 - [常见问题](#常见问题)
 
 ## API 基础信息
