@@ -1,6 +1,6 @@
 # SenseNova AI CLI 配置指南
 
-> 商汤日日新 (SenseNova) 平台接入 AI CLI 工具（Claude Code、Hermes Agent）的完整指南。
+> SenseNova（日日新）平台接入 AI CLI 工具（Claude Code、Hermes Agent）的完整指南。
 > 涵盖 API 配置、cc-switch 管理、以及面向 Hermes Agent 的模型分配方案。
 
 ---
@@ -8,12 +8,12 @@
 ## 目录
 
 - [背景](#背景)
-- [第一部分：Claude Code 使用商汤模型](#第一部分claude-code-使用商汤模型)
+- [第一部分：Claude Code 接入 SenseNova](#第一部分claude-code-接入-sensenova)
   - [API 基础信息](#api-基础信息)
   - [⚠️ 关键陷阱：/v1 路径问题](#️-关键陷阱v1-路径问题)
   - [直接配置 Claude Code](#直接配置-claude-code)
   - [使用 cc-switch 管理配置（推荐）](#使用-cc-switch-管理配置推荐)
-- [第二部分：Hermes 使用商汤模型的分配方案](#第二部分hermes-使用商汤模型的分配方案)
+- [第二部分：Hermes 的 SenseNova 模型分配方案](#第二部分hermes-的-sensenova-模型分配方案)
   - [三款模型优劣势分析](#三款模型优劣势分析)
   - [任务分配方案](#任务分配方案)
   - [最终分配总览](#最终分配总览)
@@ -25,7 +25,7 @@
 
 ## 背景
 
-商汤 SenseNova（日日新）平台提供多款 AI 模型，通过统一的 OpenAI-compatible API 对外服务。本指南解决两个核心问题：
+SenseNova（日日新）平台提供多款 AI 模型，通过统一的 OpenAI-compatible API 对外服务。本指南解决两个核心问题：
 
 1. **Claude Code 如何接入 SenseNova** —— 包括直接配置和通过 cc-switch 管理
 2. **Hermes Agent 如何在多个 SenseNova 模型之间分配任务** —— 每个模型各有优劣，如何根据能力和配额合理分配 9 个核心 Agent 任务
@@ -34,7 +34,7 @@
 
 ---
 
-## 第一部分：Claude Code 使用商汤模型
+## 第一部分：Claude Code 接入 SenseNova
 
 ### API 基础信息
 
@@ -128,7 +128,7 @@ cc-switch 已内置 SenseNova provider preset（由 [@DreamEnding](https://githu
 
 ---
 
-## 第二部分：Hermes 使用商汤模型的分配方案
+## 第二部分：Hermes 的 SenseNova 模型分配方案
 
 Hermes Agent 在运行时涉及多个不同类型的任务，包括多模态理解、文本推理、安全审批、会话检索等。SenseNova 平台提供了三款模型，每款能力、速度、配额各不相同——**需要根据模型特性进行合理的任务分配**，而不是让所有任务共用同一个模型。
 
@@ -348,7 +348,7 @@ cc-switch 有 settings.json 文件监听器，外部直接修改 `~/.claude/sett
 
 - [@DreamEnding](https://github.com/DreamEnding) — 提交 PR #2559 为 cc-switch 添加 SenseNova 内置支持
 - [@farion1231](https://github.com/farion1231) — 维护 cc-switch 开源项目
-- [SenseNova / 商汤日日新](https://platform.sensenova.cn) — AI API 服务
+- [SenseNova（日日新）](https://platform.sensenova.cn) — AI API 服务
 
 ## 许可证
 
