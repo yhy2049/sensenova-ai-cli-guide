@@ -1,4 +1,4 @@
-# SenseNova AI CLI 配置指南
+# SenseNova CLI 实战手册：Claude Code 配置 + Hermes 多模型调度方案
 
 > SenseNova（日日新）平台接入 AI CLI 工具（Claude Code、Hermes Agent）的完整指南。
 > 涵盖 API 配置、cc-switch 管理、以及面向 Hermes Agent 的模型分配方案。
